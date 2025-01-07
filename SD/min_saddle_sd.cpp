@@ -57,7 +57,7 @@ using namespace LAMMPS_NS;
 /* -------------------------------------------------------------------------------------------------
  * Constructor of ARTn
 ------------------------------------------------------------------------------------------------- */
-MinSaddle::MinSaddle(LAMMPS *lmp): MinSD(lmp) {
+MinSaddleSD::MinSaddleSD(LAMMPS *lmp): MinSD(lmp) {
 }
 
 /* -------------------------------------------------------------------------------------------------
@@ -71,7 +71,7 @@ MinSaddle::MinSaddle(LAMMPS *lmp): MinSD(lmp) {
    return negative gradient for nextra_global dof in fextra
 ------------------------------------------------------------------------- */
 
-double MinSaddle::energy_force(int resetflag)
+double MinSaddleSD::energy_force(int resetflag)
 {
   // check for reneighboring
   // always communicate since minimizer moved atoms
@@ -227,7 +227,7 @@ double MinSaddle::energy_force(int resetflag)
   return energy;
 }
 
-double MinSaddle::my_energy_force(int resetflag){
+double MinSaddleSD::my_energy_force(int resetflag){
   // check for reneighboring
   // always communicate since minimizer moved atoms
 
@@ -341,7 +341,7 @@ double MinSaddle::my_energy_force(int resetflag){
 
 }
 
-int MinSaddle::iterate(int maxiter)
+int MinSaddleSD::iterate(int maxiter)
 {
   int i,m,n,fail,ntimestep;
   double fdotf;

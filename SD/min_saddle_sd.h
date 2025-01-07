@@ -1,6 +1,6 @@
 #ifdef MINIMIZE_CLASS
 
-MinimizeStyle(saddle,MinSaddle)
+MinimizeStyle(saddle_sd,MinSaddleSD)
 
 #else
 
@@ -13,7 +13,7 @@ using namespace std;
 
 namespace LAMMPS_NS {
 
-class MinSaddle: public MinSD {
+class MinSaddleSD: public MinSD {
 public:
   MinSaddle(class LAMMPS *);
   int iterate(int);
